@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5efe6;
+}
+
+/* Animación de entrada controlada por IntersectionObserver */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #c9684f;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  width: 64px;
+  background: linear-gradient(to right, transparent, #c9684f);
+}
+
+.divider::after {
+  background: linear-gradient(to left, transparent, #c9684f);
+}
